@@ -1,2 +1,2 @@
-require('@babel/register');
-require('./helpers');
+require('@babel/register')
+require('./helpers')
