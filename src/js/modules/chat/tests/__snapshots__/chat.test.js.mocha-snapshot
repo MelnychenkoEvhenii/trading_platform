@@ -1,0 +1,251 @@
+exports["should render correctly(0)"] = {
+  "node": {
+    "nodeType": "class",
+    "type": "ThemeProvider",
+    "props": {
+      "theme": {},
+      "children": {
+        "type": {
+          "render": "[function]",
+          "attrs": [],
+          "componentStyle": {
+            "rules": [
+              "\n  width: 1000px;\n  margin: 50px auto;\n  display: flex;\n  border: 1px solid ",
+              "[function]",
+              "; \n  background-color: ",
+              "[function]",
+              "; \n"
+            ],
+            "isStatic": false,
+            "componentId": "sc-bdVaJa"
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": [],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "withComponent": "withComponent",
+          "warnTooManyClasses": "[function]",
+          "toString": "[function]"
+        },
+        "props": {
+          "children": [
+            {
+              "type": "Messages",
+              "props": {
+                "users": [],
+                "messages": [],
+                "addNewMessage": "addNewMessage"
+              },
+              "_store": {}
+            },
+            {
+              "type": "Users",
+              "props": {
+                "users": [],
+                "strings": {},
+                "addNewUser": "addNewUser",
+                "toggleChatModule": "toggleChatModule",
+                "changeStateSelectedUser": "changeStateSelectedUser"
+              },
+              "_store": {}
+            }
+          ]
+        },
+        "_store": {}
+      }
+    },
+    "rendered": {
+      "nodeType": "function",
+      "type": {
+        "render": "[function]",
+        "attrs": [],
+        "componentStyle": {
+          "rules": [
+            "\n  width: 1000px;\n  margin: 50px auto;\n  display: flex;\n  border: 1px solid ",
+            "[function]",
+            "; \n  background-color: ",
+            "[function]",
+            "; \n"
+          ],
+          "isStatic": false,
+          "componentId": "sc-bdVaJa"
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": [],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "div",
+        "withComponent": "withComponent",
+        "warnTooManyClasses": "[function]",
+        "toString": "[function]"
+      },
+      "props": {
+        "children": [
+          {
+            "type": "Messages",
+            "props": {
+              "users": [],
+              "messages": [],
+              "addNewMessage": "addNewMessage"
+            },
+            "_store": {}
+          },
+          {
+            "type": "Users",
+            "props": {
+              "users": [],
+              "strings": {},
+              "addNewUser": "addNewUser",
+              "toggleChatModule": "toggleChatModule",
+              "changeStateSelectedUser": "changeStateSelectedUser"
+            },
+            "_store": {}
+          }
+        ]
+      },
+      "rendered": [
+        {
+          "nodeType": "class",
+          "type": "Messages",
+          "props": {
+            "users": [],
+            "messages": [],
+            "addNewMessage": "addNewMessage"
+          }
+        },
+        {
+          "nodeType": "class",
+          "type": "Users",
+          "props": {
+            "users": [],
+            "strings": {},
+            "addNewUser": "addNewUser",
+            "toggleChatModule": "toggleChatModule",
+            "changeStateSelectedUser": "changeStateSelectedUser"
+          }
+        }
+      ]
+    }
+  },
+  "type": "ThemeProvider",
+  "props": {
+    "theme": {}
+  },
+  "children": [
+    {
+      "node": {
+        "nodeType": "function",
+        "type": {
+          "render": "[function]",
+          "attrs": [],
+          "componentStyle": {
+            "rules": [
+              "\n  width: 1000px;\n  margin: 50px auto;\n  display: flex;\n  border: 1px solid ",
+              "[function]",
+              "; \n  background-color: ",
+              "[function]",
+              "; \n"
+            ],
+            "isStatic": false,
+            "componentId": "sc-bdVaJa"
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": [],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "withComponent": "withComponent",
+          "warnTooManyClasses": "[function]",
+          "toString": "[function]"
+        },
+        "props": {
+          "children": [
+            {
+              "type": "Messages",
+              "props": {
+                "users": [],
+                "messages": [],
+                "addNewMessage": "addNewMessage"
+              },
+              "_store": {}
+            },
+            {
+              "type": "Users",
+              "props": {
+                "users": [],
+                "strings": {},
+                "addNewUser": "addNewUser",
+                "toggleChatModule": "toggleChatModule",
+                "changeStateSelectedUser": "changeStateSelectedUser"
+              },
+              "_store": {}
+            }
+          ]
+        },
+        "rendered": [
+          {
+            "nodeType": "class",
+            "type": "Messages",
+            "props": {
+              "users": [],
+              "messages": [],
+              "addNewMessage": "addNewMessage"
+            }
+          },
+          {
+            "nodeType": "class",
+            "type": "Users",
+            "props": {
+              "users": [],
+              "strings": {},
+              "addNewUser": "addNewUser",
+              "toggleChatModule": "toggleChatModule",
+              "changeStateSelectedUser": "changeStateSelectedUser"
+            }
+          }
+        ]
+      },
+      "type": "styled.div",
+      "props": {},
+      "children": [
+        {
+          "node": {
+            "nodeType": "class",
+            "type": "Messages",
+            "props": {
+              "users": [],
+              "messages": [],
+              "addNewMessage": "addNewMessage"
+            }
+          },
+          "type": "Messages",
+          "props": {
+            "users": [],
+            "messages": [],
+            "addNewMessage": "addNewMessage"
+          }
+        },
+        {
+          "node": {
+            "nodeType": "class",
+            "type": "Users",
+            "props": {
+              "users": [],
+              "strings": {},
+              "addNewUser": "addNewUser",
+              "toggleChatModule": "toggleChatModule",
+              "changeStateSelectedUser": "changeStateSelectedUser"
+            }
+          },
+          "type": "Users",
+          "props": {
+            "users": [],
+            "strings": {},
+            "addNewUser": "addNewUser",
+            "toggleChatModule": "toggleChatModule",
+            "changeStateSelectedUser": "changeStateSelectedUser"
+          }
+        }
+      ]
+    }
+  ]
+};
+

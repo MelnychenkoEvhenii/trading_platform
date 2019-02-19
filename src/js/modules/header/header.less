@@ -1,0 +1,47 @@
+@logoContainerSize: 50px;
+
+.header-module {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--base-background);
+
+  &__title-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__status-container {
+    position: absolute;
+    right: 10px;
+    display: flex;
+  }
+}
+
+.title-block {
+  &__logo-container {
+    width: @logoContainerSize;
+    height: @logoContainerSize;
+  }
+
+  &__title-container {
+
+  }
+}
+
+.logo-container {
+  &__logo {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title-container {
+  &__text {
+    color: var(--primary-text-color);
+  }
+}
