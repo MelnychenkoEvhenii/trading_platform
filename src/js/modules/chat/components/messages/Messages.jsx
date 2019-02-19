@@ -1,21 +1,30 @@
 import React from 'react'
 import moment from 'moment'
+import PropTypes from 'prop-types'
 
 export default class Messages extends React.Component {
+  static propTypes = {
+    users: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    addNewMessage: PropTypes.func.isRequired,
+    messages: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  }
+
   submitForm = event => {
     event.preventDefault()
+    const { users, addNewMessage } = this.props
 
     let author = null
-    for (let user of this.props.users) {
+    /* eslint-disable-next-line no-restricted-syntax */
+    for (const user of users) {
       if (user.isSelected) {
         author = user.name
         break
       }
     }
 
-    this.props.addNewMessage({
+    addNewMessage({
       text: this.node.value,
-      author: author,
+      author,
       datetime: new Date().getTime(),
     })
 
@@ -23,10 +32,12 @@ export default class Messages extends React.Component {
   }
 
   render() {
+    const { messages } = this.props
+
     return (
       <div className="main-wrapper__chat chat">
         <form onSubmit={this.submitForm} action="#">
-          {this.props.messages.map(message => (
+          {messages.map(message => (
             <div key={message.datetime} className="chat__message message">
               <span className="message__date">
                 {moment(message.datetime).format('DD:MM:YYYY hh:mm')}
@@ -36,7 +47,9 @@ export default class Messages extends React.Component {
             </div>
           ))}
           <input
-            ref={node => (this.node = node)}
+            ref={node => {
+              this.node = node
+            }}
             type="text"
             className="chat__input"
           />

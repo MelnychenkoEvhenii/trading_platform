@@ -1,8 +1,8 @@
 import { takeEvery, put, call, take, apply } from 'redux-saga/effects'
+import faker from 'faker'
 import watchChatSaga, { createWebSocket } from '../saga'
 import * as saga from '../saga'
 import * as mockActions from '../../../mockData/mockActions'
-import faker from 'faker'
 
 describe('chatSaga watchChatSaga', () => {
   const generator = watchChatSaga()
@@ -150,7 +150,7 @@ describe('chatSaga addNewUser', () => {
 
 describe('chatSaga initConnection', () => {
   const generator = saga.initConnection()
-  let channel = {
+  const channel = {
     take: () => {},
     close: () => {},
   }

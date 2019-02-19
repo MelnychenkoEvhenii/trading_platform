@@ -1,6 +1,6 @@
+import { combineReducers } from 'redux'
 import config from '../config/config'
 import constants from '../constants/constants'
-import { combineReducers } from 'redux'
 import lang from '../languages/english/en'
 import mainTheme from '../themes/mainTheme'
 

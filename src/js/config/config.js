@@ -12,7 +12,7 @@ export default {
       isActive: true,
     },
     header: {
-      logo: logo,
+      logo,
       status: '',
       isActive: true,
     },

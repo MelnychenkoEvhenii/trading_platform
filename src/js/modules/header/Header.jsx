@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PureComponent from '../../base/pureComponent/PureComponent.jsx'
+import PureComponent from '../../base/pureComponent/PureComponent'
 import './header.less'
 
 export default class Header extends PureComponent {
   static propTypes = {
     logo: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
-    strings: PropTypes.object.isRequired,
+    strings: PropTypes.shape().isRequired,
   }
 
   render() {
@@ -20,7 +20,7 @@ export default class Header extends PureComponent {
         </div>
         <div className="title-block header-module__title-block">
           <div className="logo-container title-block__logo-container">
-            <img className="logo-container__logo" src={logo} />
+            <img alt="example" className="logo-container__logo" src={logo} />
           </div>
           <div className="title-container title-block__title-container">
             <span className="title-container__text">

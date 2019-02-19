@@ -1,22 +1,24 @@
 import React from 'react'
 import './mainComponent.less'
 import PropTypes from 'prop-types'
-import PureComponent from '../../base/pureComponent/PureComponent.jsx'
-import Chat from '../chat/'
-import Header from '../header/'
-import Footer from '../footer/'
-import Sidebar from '../sidebar/'
+import PureComponent from '../../base/pureComponent/PureComponent'
+import Chat from '../chat'
+import Header from '../header'
+import Footer from '../footer'
+import Sidebar from '../sidebar'
 // import { GlobalStyleComponent } from 'styled-components';
 
 export default class MainComponent extends PureComponent {
   static propTypes = {
-    modules: PropTypes.object.isRequired,
-    activeBlocks: PropTypes.object.isRequired,
+    modules: PropTypes.shape().isRequired,
+    activeBlocks: PropTypes.shape().isRequired,
+    initConnection: PropTypes.func.isRequired,
   }
 
   constructor(props) {
     super(props)
-    this.props.initConnection()
+    const { initConnection } = this.props
+    initConnection()
   }
 
   render() {

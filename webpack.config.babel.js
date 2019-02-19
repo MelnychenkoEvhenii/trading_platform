@@ -28,6 +28,7 @@ module.exports = (env, options) => {
       alias: {
         assets: path.resolve(__dirname, 'assets'),
       },
+      extensions: ['.js', '.jsx'],
     },
     module: {
       rules: [
@@ -51,7 +52,7 @@ module.exports = (env, options) => {
                   [
                     '@babel/preset-react',
                     {
-                      development: development,
+                      development,
                     },
                   ],
                 ],

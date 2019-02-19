@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PureComponent from '../../base/pureComponent/PureComponent.jsx'
-import Messages from './components/messages/Messages.jsx'
-import Users from './components/users/Users.jsx'
+import { ThemeProvider } from 'styled-components'
+import PureComponent from '../../base/pureComponent/PureComponent'
+import Messages from './components/messages/Messages'
+import Users from './components/users/Users'
 import './chat.less'
 import Wrapper from './styledComponents'
-import { ThemeProvider } from 'styled-components'
 
 export default class Chat extends PureComponent {
   static propTypes = {
     users: PropTypes.arrayOf(PropTypes.object).isRequired,
-    theme: PropTypes.object.isRequired,
-    strings: PropTypes.object.isRequired,
+    theme: PropTypes.shape().isRequired,
+    strings: PropTypes.shape().isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     addNewUser: PropTypes.func.isRequired,
     addNewMessage: PropTypes.func.isRequired,

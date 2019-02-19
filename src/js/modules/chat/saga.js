@@ -1,8 +1,8 @@
 import { takeEvery, put, call, take, apply } from 'redux-saga/effects'
-import constants from '../../constants/constants'
 import faker from 'faker'
-import * as actions from './actions'
 import { eventChannel } from 'redux-saga'
+import constants from '../../constants/constants'
+import * as actions from './actions'
 
 export let ws = null
 let channel = null
