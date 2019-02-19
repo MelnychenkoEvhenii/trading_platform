@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --opts ./mocha.opts src/js/**/*.test.js --recursive -R nyan --silent",
-    "coverage": "nyc -e .jsx mocha --opts ./mocha.opts web/js/**/*.test.js --recursive -R nyan --silent",
+    "test-cov": "nyc -e .jsx mocha --opts ./mocha.opts src/js/**/*.test.js --recursive -R nyan --silent",
     "build": "cross-env NODE_ENV=development webpack --color --progress",
     "build:prod": "cross-env NODE_ENV=production webpack --color --progress --prod",
     "start": "cross-env NODE_ENV=development webpack-dev-server --color --progress --open",
