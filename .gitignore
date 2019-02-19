@@ -5,6 +5,8 @@
 
 # testing
 /coverage
+.nyc_output
+.nyc_output-tmp
 
 # production
 /build
