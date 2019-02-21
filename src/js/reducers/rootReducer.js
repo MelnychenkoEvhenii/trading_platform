@@ -3,6 +3,7 @@ import config from '../config/config'
 import constants from '../constants/constants'
 import lang from '../languages/english/en'
 import mainTheme from '../themes/mainTheme'
+import newsReducer from '../modules/news/reducer'
 
 const usersInitialState = [
   { name: '@john_123', isSelected: true },
@@ -107,4 +108,5 @@ export default combineReducers({
   config: configReducer,
   strings: languageReducer,
   messages: messagesReducer,
+  news: newsReducer,
 })
