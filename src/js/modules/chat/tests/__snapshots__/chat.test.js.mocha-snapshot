@@ -12,9 +12,9 @@ exports["should render correctly(0)"] = {
             "rules": [
               "\n  width: 1000px;\n  margin: 50px auto;\n  display: flex;\n  border: 1px solid ",
               "[function]",
-              "; \n  background-color: ",
+              ";\n  background-color: ",
               "[function]",
-              "; \n"
+              ";\n"
             ],
             "isStatic": false,
             "componentId": "sc-bdVaJa"
@@ -63,9 +63,9 @@ exports["should render correctly(0)"] = {
           "rules": [
             "\n  width: 1000px;\n  margin: 50px auto;\n  display: flex;\n  border: 1px solid ",
             "[function]",
-            "; \n  background-color: ",
+            ";\n  background-color: ",
             "[function]",
-            "; \n"
+            ";\n"
           ],
           "isStatic": false,
           "componentId": "sc-bdVaJa"
@@ -141,9 +141,9 @@ exports["should render correctly(0)"] = {
             "rules": [
               "\n  width: 1000px;\n  margin: 50px auto;\n  display: flex;\n  border: 1px solid ",
               "[function]",
-              "; \n  background-color: ",
+              ";\n  background-color: ",
               "[function]",
-              "; \n"
+              ";\n"
             ],
             "isStatic": false,
             "componentId": "sc-bdVaJa"
