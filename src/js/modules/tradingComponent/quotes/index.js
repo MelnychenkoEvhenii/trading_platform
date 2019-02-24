@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
-import Component from './Header.jsx';
+import Component from './Quotes.jsx';
 import * as selectors from './selectors';
-import * as actions from "./actions";
+import * as actions from './actions';
 
 const mapStateToProps = state => ({
-    balance: selectors.getBalance(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    openModalWindow: () => dispatch(actions.openModalWindow()),
+    hideQuotesBlock: () => dispatch(actions.hideQuotesBlock()),
 });
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
 )(Component);

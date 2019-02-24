@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import Component from './Footer.jsx';
+import Component from './TradingComponent.jsx';
 import * as selectors from './selectors';
+import * as actions from './actions';
 
 const mapStateToProps = state => ({
-    strings: selectors.getStrings(state),
+
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+});
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
 )(Component);

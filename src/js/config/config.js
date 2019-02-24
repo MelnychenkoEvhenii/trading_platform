@@ -1,23 +1,22 @@
-import logo from 'assets/react-logo.svg'
-
 export default {
-  activeBlocks: {
-    chat: true,
-  },
-  modules: {
-    chat: {
-      isActive: true,
-    },
-    sidebar: {
-      isActive: true,
-    },
-    header: {
-      logo,
-      status: '',
-      isActive: true,
-    },
-    footer: {
-      isActive: true,
-    },
-  },
+    modules: {
+        sidebar: {
+            isActive: true,
+        },
+        header: {
+            isActive: true,
+        },
+        footer: {
+            isActive: true,
+        },
+        race: {
+            isActive: true,
+        },
+        quotes: {
+            isActive: true,
+        },
+        news: {
+            isActive: true,
+        }
+    }
 }

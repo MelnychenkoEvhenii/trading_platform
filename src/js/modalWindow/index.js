@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import Component from './Footer.jsx';
+import Component from './ModalWindow.jsx';
+import * as actions from './actions';
 import * as selectors from './selectors';
 
 const mapStateToProps = state => ({
     strings: selectors.getStrings(state),
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    toggleChatModule: () => dispatch(actions.toggleChatModule())
+});
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
 )(Component);
