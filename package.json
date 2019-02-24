@@ -13,7 +13,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --color --progress --open",
     "format": "prettier --write \"src/js/**/*.{js,jsx,less}\"",
     "lint": "eslint \"src/js/**/*.jsx\" --fix",
-    "precommit": "lint-staged && npm run test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.{jsx}": [
@@ -86,6 +86,7 @@
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.8.1",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
     "rm-cli": "^1.4.2",

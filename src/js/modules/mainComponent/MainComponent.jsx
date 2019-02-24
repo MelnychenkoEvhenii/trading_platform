@@ -1,52 +1,45 @@
 import React from 'react'
-import './mainComponent.less'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import PureComponent from '../../base/pureComponent/PureComponent'
-import Chat from '../chat'
-import Header from '../header'
-import Footer from '../footer'
-import Sidebar from '../sidebar'
-// import { GlobalStyleComponent } from 'styled-components';
+import Header from '../header/index'
+import Footer from '../footer/index'
+import Sidebar from '../sidebar/index'
+import TradindComponent from '../tradingComponent/index'
+
+const WrapperMain = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
+
+const WrapperContent = styled.div`
+  display: flex;
+  flex: 1;
+`
 
 export default class MainComponent extends PureComponent {
   static propTypes = {
-    modules: PropTypes.shape().isRequired,
-    activeBlocks: PropTypes.shape().isRequired,
-    initConnection: PropTypes.func.isRequired,
+    modules: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   }
+  //   static defaultProps = {}
 
-  constructor(props) {
-    super(props)
-    const { initConnection } = this.props
-    initConnection()
-  }
+  //   constructor(props) {
+  //     super(props)
+  //   }
 
   render() {
-    const { modules, activeBlocks } = this.props
+    const { modules } = this.props
 
     return (
-      <div className="page-wrapper">
-        {modules.header.isActive && (
-          <header className="page-wrapper__header">
-            <Header />
-          </header>
-        )}
-        <main className="content page-wrapper__content">
-          <div className="content__sidebar">
-            {modules.sidebar.isActive && <Sidebar />}
-          </div>
-          {activeBlocks.chat ? (
-            <div className="content__chat">
-              {modules.chat.isActive && <Chat />}
-            </div>
-          ) : null}
-        </main>
-        {modules.footer.isActive && (
-          <footer className="page-wrapper__footer">
-            <Footer />
-          </footer>
-        )}
-      </div>
+      <WrapperMain>
+        <Header />
+        <WrapperContent>
+          <Sidebar />
+          <TradindComponent modules={modules} />
+        </WrapperContent>
+        <Footer />
+      </WrapperMain>
     )
   }
 }

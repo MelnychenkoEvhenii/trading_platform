@@ -1,34 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import PureComponent from '../../base/pureComponent/PureComponent'
-import './header.less'
+
+const WrapperHeader = styled.div`
+  /* height: 80px; */
+  border: 1px double black;
+  display: flex;
+  justify-content: space-between;
+`
 
 export default class Header extends PureComponent {
   static propTypes = {
-    logo: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    strings: PropTypes.shape().isRequired,
+    balance: PropTypes.string.isRequired,
+    openModalWindow: PropTypes.func.isRequired,
   }
+  //   static defaultProps = {}
 
   render() {
-    const { logo, status, strings } = this.props
+    const { balance, openModalWindow } = this.props
 
     return (
-      <div className="header-module">
-        <div className="status-container header-module__status-container">
-          <span className="status-container__status-text">{status}</span>
-        </div>
-        <div className="title-block header-module__title-block">
-          <div className="logo-container title-block__logo-container">
-            <img alt="example" className="logo-container__logo" src={logo} />
-          </div>
-          <div className="title-container title-block__title-container">
-            <span className="title-container__text">
-              {strings.resources.react}
-            </span>
-          </div>
-        </div>
-      </div>
+      <WrapperHeader>
+        <div className="name">ReactAppTeam</div>
+        <div className="balance">{balance}$</div>
+        <div className="logo">Logo</div>
+        <div className="Notification">Notification</div>
+        <div className="FullScreen">FullScreen</div>
+        <button type="button" className="Settings" onClick={openModalWindow}>
+          Settings
+        </button>
+        <a href="https://deveducation.com/">Logout</a>
+      </WrapperHeader>
     )
   }
 }

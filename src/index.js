@@ -1,21 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import createSagaMiddleware from 'redux-saga'
-import { createStore, applyMiddleware } from 'redux'
 import MainComponent from './js/modules/mainComponent/index'
-import rootReducer from './js/reducers/rootReducer'
-import rootSaga from './js/rootSaga/rootSaga'
 import * as actions from './js/modules/news/actions'
+import getStore from './js/store/index'
 
-const sagaMiddleware = createSagaMiddleware()
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
-sagaMiddleware.run(rootSaga)
-window.store = store
-
+const store = getStore()
 store.dispatch(actions.getPostsRequest())
 
 ReactDOM.render(
+  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <MainComponent />
   </Provider>,

@@ -1,15 +1,13 @@
 import { connect } from 'react-redux';
-import Component from './Sidebar.jsx';
-import * as actions from './actions';
+import Component from './Race';
 import * as selectors from './selectors';
+import * as actions from './actions';
 
 const mapStateToProps = state => ({
-    strings: selectors.getStrings(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    showQuotesBlock: () => dispatch(actions.showQuotesBlock()),
-    showRaceBlock: () => dispatch(actions.showRaceBlock()),
+    hideRaceBlock: () => dispatch(actions.hideRaceBlock()),
 });
 
 export default connect(

@@ -1,3 +1,3 @@
-import equal from 'deep-equal'
+import equal from 'deep-equal';
 
-export const deepEqual = (a, b) => equal(a, b)
+export const deepEqual = (a, b) => equal(a, b);

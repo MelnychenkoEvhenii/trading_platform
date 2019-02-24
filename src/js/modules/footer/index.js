@@ -1,14 +1,14 @@
 import { connect } from 'react-redux'
-import Component from './Footer.jsx'
+import Component from './Footer'
 import * as selectors from './selectors'
 
 const mapStateToProps = state => ({
   strings: selectors.getStrings(state),
 })
 
-const mapDispatchToProps = dispatch => ({})
+// const mapDispatchToProps = dispatch => ({});
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
+  // mapDispatchToProps,
 )(Component)
