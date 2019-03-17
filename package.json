@@ -13,7 +13,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --color --progress --open",
     "format": "prettier --write \"src/js/**/*.{js,jsx,less}\"",
     "lint": "eslint \"src/js/**/*.jsx\" --fix",
-    "precommit": "lint-staged && npm run test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.{jsx}": [

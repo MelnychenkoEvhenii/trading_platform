@@ -17,6 +17,6 @@ global.expect = expect
 global.mochaSnapshots = mochaSnapshots
 
 global.snapshotCreator = ReactComponent =>
-    expect(ReactComponent).matchSnapshot()
+  expect(ReactComponent).matchSnapshot()
 global.shallowRender = StyledComponent =>
-    renderer.create(StyledComponent).toJSON()
+  renderer.create(StyledComponent).toJSON()

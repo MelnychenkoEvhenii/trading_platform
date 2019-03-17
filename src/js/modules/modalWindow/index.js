@@ -1,17 +1,17 @@
 import { connect } from 'react-redux'
-import Component from './Header'
-import * as selectors from './selectors'
+import ModalWindow from './ModalWindow'
 import * as actions from './actions'
+import * as selectors from './selectors'
 
 const mapStateToProps = state => ({
-  balance: selectors.getBalance(state),
+  show: selectors.getIsModalOpen(state),
 })
 
 const mapDispatchToProps = dispatch => ({
-  openModalWindow: () => dispatch(actions.openModalWindow()),
+  toggleModal: () => dispatch(actions.toggleModal()),
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Component)
+)(ModalWindow)

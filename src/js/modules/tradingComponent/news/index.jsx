@@ -1,17 +1,19 @@
 import { connect } from 'react-redux'
-import Component from './Header'
+import News from './News'
 import * as selectors from './selectors'
 import * as actions from './actions'
 
 const mapStateToProps = state => ({
-  balance: selectors.getBalance(state),
+  posts: selectors.getPosts(state),
+  loading: selectors.isLoading(state),
+  hasError: selectors.getError(state),
 })
 
 const mapDispatchToProps = dispatch => ({
-  openModalWindow: () => dispatch(actions.openModalWindow()),
+  setPostId: id => dispatch(actions.setSelectedPostId(id)),
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Component)
+)(News)

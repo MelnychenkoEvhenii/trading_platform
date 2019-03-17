@@ -1,24 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PureComponent from '../../base/pureComponent/PureComponent.jsx';
-import styled from "styled-components";
+import React from 'react'
+// import PropTypes from 'prop-types';
+import styled from 'styled-components'
+// import PureComponent from '../../base/pureComponent/PureComponent'
 
 const WrapperMain = styled.div`
-    border: 1px double black;
-    height: 50px;
-    display: flex;
-`;
+  border: 1px double black;
+  height: 50px;
+  display: flex;
+`
 
-export default class Header extends PureComponent {
-    static propTypes = {};
-    static defaultProps = {};
+const Header = () => <WrapperMain>FOOTER</WrapperMain>
 
-    render() {
-
-        return (
-            <WrapperMain>
-               FOOTER
-            </WrapperMain>
-        )
-    }
-}
+export default Header

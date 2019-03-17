@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
-import Component from './Header'
+import Component from './MainComponent'
 import * as selectors from './selectors'
 import * as actions from './actions'
 
 const mapStateToProps = state => ({
-  balance: selectors.getBalance(state),
+  modules: selectors.getConfigModules(state),
+  activeBlocks: selectors.getConfigActiveBlocks(state),
 })
 
 const mapDispatchToProps = dispatch => ({
-  openModalWindow: () => dispatch(actions.openModalWindow()),
+  initConnection: () => dispatch(actions.initConnection()),
 })
 
 export default connect(

@@ -1,17 +1,14 @@
-import { connect } from 'react-redux';
-import Component from './MainComponent';
-import * as selectors from './selectors';
-import * as actions from './actions';
+import { connect } from 'react-redux'
+import Component from './MainComponent'
+import * as selectors from './selectors'
 
 const mapStateToProps = state => ({
-    modules: selectors.getModules(state),
-});
+  modules: selectors.getModules(state),
+})
 
-const mapDispatchToProps = dispatch => ({
-
-});
+const mapDispatchToProps = payload => dispatch => ({})
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Component);
+  mapStateToProps,
+  mapDispatchToProps
+)(Component)
