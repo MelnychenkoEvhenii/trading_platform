@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import MainComponent from './js/modules/mainComponent/index'
-import * as actions from './js/modules/news/actions'
+import * as actions from './js/modules/tradingComponent/news/actions'
 import getStore from './js/store/index'
 
 const store = getStore()

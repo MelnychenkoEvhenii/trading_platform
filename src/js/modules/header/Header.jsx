@@ -12,7 +12,7 @@ const WrapperHeader = styled.div`
 
 export default class Header extends PureComponent {
   static propTypes = {
-    balance: PropTypes.string.isRequired,
+    balance: PropTypes.number.isRequired,
     openModalWindow: PropTypes.func.isRequired,
   }
   //   static defaultProps = {}

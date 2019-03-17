@@ -20,7 +20,7 @@ const WrapperContent = styled.div`
 
 export default class MainComponent extends PureComponent {
   static propTypes = {
-    modules: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    modules: PropTypes.shape().isRequired,
   }
   //   static defaultProps = {}
 

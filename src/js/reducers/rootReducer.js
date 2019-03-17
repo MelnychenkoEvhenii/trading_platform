@@ -3,18 +3,18 @@ import config from '../config/config'
 import constants from '../constants/constants'
 // import lang from '../languages/english/en'
 // import mainTheme from '../themes/mainTheme'
-import newsReducer from '../modules/news/reducer'
+import newsReducer from '../modules/tradingComponent/news/reducer'
 
 const modalWindow = {
-  isActive: false,
+  show: false,
 }
 
 const modalWindowReducer = (state = modalWindow, action) => {
   switch (action.type) {
-    case constants.CHANGE_MODAL_WINDOW_STATE: {
+    case constants.TOGGLE_MODAL: {
       return {
         ...state,
-        isActive: action.payload,
+        show: !state.show,
       }
     }
     default: {
@@ -82,7 +82,7 @@ export default combineReducers({
   // strings: languageReducer,
   // messages: messagesReducer,
   news: newsReducer,
-  isModalWindow: modalWindowReducer,
+  modal: modalWindowReducer,
   balance: balanceReducer,
   viewBlocks: viewBlockReducer,
 })
