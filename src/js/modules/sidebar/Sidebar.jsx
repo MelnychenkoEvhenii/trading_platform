@@ -1,27 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PureComponent from '../../base/pureComponent/PureComponent.jsx';
-import styled from "styled-components";
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import PureComponent from '../../base/pureComponent/PureComponent.jsx'
 
 const WrapperSidebar = styled.div`
-    border: 1px double black;
-    width: 70px;
-    height: 100%;
-`;
+  border: 1px double black;
+  width: 70px;
+  height: 100%;
+`
 
 export default class Sidebar extends PureComponent {
-    static propTypes = {};
-    static defaultProps = {};
+  static propTypes = {}
 
-    render() {
-        const { showRaceBlock, showQuotesBlock } = this.props;
+  static defaultProps = {}
 
-        return (
-            <WrapperSidebar>
-                SIDEBAR
-                <button onClick={showRaceBlock}>Race</button>
-                <button onClick={showQuotesBlock}>Quotes</button>
-            </WrapperSidebar>
-        );
-    }
+  render() {
+    const { showRaceBlock, showQuotesBlock } = this.props
+
+    return (
+      <WrapperSidebar>
+        SIDEBAR
+        <button onClick={showRaceBlock}>Race</button>
+        <button onClick={showQuotesBlock}>Quotes</button>
+      </WrapperSidebar>
+    )
+  }
 }

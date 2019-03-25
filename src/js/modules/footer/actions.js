@@ -1,3 +1,3 @@
-import constants from '../../constants/constants';
+import constants from '../../constants/constants'
 
-export const gdfgdfg = () => ({ type: constants.TOGGLE_CHAT_MODULE });
+export const gdfgdfg = () => ({ type: constants.TOGGLE_CHAT_MODULE })

@@ -1,23 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MainComponent from './js/modules/mainComponent/index'
 import { Provider } from 'react-redux'
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './js/reducers/rootReducer'
 import createSagaMiddleware from 'redux-saga'
-import rootSaga from './js/rootSaga/rootSaga'
+import { ThemeProvider } from 'styled-components'
 
-const sagaMiddleware = createSagaMiddleware();
+import rootReducer from './js/reducers/rootReducer'
+import MainComponent from './js/modules/mainComponent/index'
+import rootSaga from './js/rootSaga/rootSaga';
+import lightTheme from './js/managers/themeManager/lightTheme';
+
+const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(sagaMiddleware)));
-sagaMiddleware.run(rootSaga);
-window.store = store;
+  rootReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleware)),
+)
+sagaMiddleware.run(rootSaga)
+window.store = store
 
 ReactDOM.render(
   <Provider store={store}>
-    <MainComponent />
+    <ThemeProvider theme={lightTheme}>
+      <MainComponent/>
+    </ThemeProvider>
   </Provider>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+)

@@ -1,1 +1,1 @@
-import constants from '../../constants/constants';
+import constants from '../../constants/constants'

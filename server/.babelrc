@@ -1,0 +1,19 @@
+{
+  "presets":  [
+    "env",
+    "stage-0"
+  ],
+  "plugins":  [
+    ["transform-react-jsx"],
+    ["babel-plugin-transform-require-ignore",
+      {
+        "extensions": [".less", ".sass"]
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [ "istanbul" ]
+    }
+  }
+}

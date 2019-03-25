@@ -13,7 +13,12 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --color --progress --open",
     "format": "prettier --write \"src/js/**/*.{js,jsx,less}\"",
     "lint": "eslint \"src/js/**/*.jsx\" --fix",
-    "precommit": "lint-staged && npm run test"
+    "precommit": "lint-staged && npm run test",
+    "----------SERVER----------": "",
+    "tests-server": "cross-env NODE_ENV=tests mocha --opts ./mocha.opts server/**/*.test.js --recursive -R nyan --silent",
+    "tests-cov-server": "cross-env NODE_ENV=tests nyc mocha --opts ./mocha.opts server/**/*.test.js --recursive -R nyan --silent",
+    "compile-server": "babel ./server/server.js  -d ./server/dist",
+    "run-server": "npm run compile-server && cross-env NODE_ENV=production node server/dist/server/server.js"
   },
   "lint-staged": {
     "*.{jsx}": [
@@ -24,8 +29,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "7.0.0",
     "@babel/preset-react": "7.0.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "chai": "4.2.0",
@@ -67,8 +74,11 @@
     "@babel/polyfill": "7.0.0",
     "@babel/register": "7.0.0",
     "@babel/runtime": "7.2.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
     "babel-plugin-transform-require-ignore": "0.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.2.0",
     "enzyme": "3.6.0",
     "enzyme-adapter-react-16": "1.7.0",
@@ -82,8 +92,10 @@
     "postcss-safe-parser": "^4.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-dropdown": "^1.6.4",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
+    "react-scrollbars-custom": "^3.1.5",
     "react-test-renderer": "^16.8.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
@@ -95,6 +107,7 @@
     "styled-components-test-utils": "^1.0.1",
     "terser-webpack-plugin": "^1.1.0",
     "url-loader": "^1.1.2",
+    "websocket": "^1.0.28",
     "ws": "^6.1.3"
   }
 }
