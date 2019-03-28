@@ -162,4 +162,5 @@ export default combineReducers({
   filter: filterReducer,
   translations: langReducer,
   theme: themeReducer,
+  news: newsReducer,
 })
