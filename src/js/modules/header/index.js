@@ -5,10 +5,15 @@ import * as actions from './actions'
 
 const mapStateToProps = state => ({
   balance: selectors.getBalance(state),
+  modalWindowState: selectors.getModalWindowState(state),
+  questions: selectors.getQuestions(state),
 })
 
 const mapDispatchToProps = dispatch => ({
-  openModalWindow: () => dispatch(actions.openModalWindow()),
+  toggleBalanceModal: payload => dispatch(actions.toggleBalanaceModal(payload)),
+  toggleSettingsModal: payload =>
+    dispatch(actions.toggleSettingsModal(payload)),
+  checkAnswer: payload => dispatch(actions.checkAnswer(payload)),
 })
 
 export default connect(
