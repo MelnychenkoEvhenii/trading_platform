@@ -7,10 +7,15 @@ export const hideQuotesBlock = () => ({
 
 export const filterInstrumentName = payload => ({
   type: constants.FILTER_INSTRUMENTS,
-  payload
+  payload,
 })
 
 export const filterMarketField = payload => ({
   type: constants.FILTER_MARKET_FIELD,
-  payload
+  payload,
+})
+
+export const freezeInstruments = payload => ({
+  type: constants.INSTRUMENT_ISFREEZE,
+  payload,
 })

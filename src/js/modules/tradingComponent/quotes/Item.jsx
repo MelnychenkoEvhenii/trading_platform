@@ -6,10 +6,16 @@ const ItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   &:hover {
     background-color: red;
     cursor: pointer;
   }
+`;
+
+const Item = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export default class ItemComponent extends React.Component {
@@ -22,14 +28,14 @@ export default class ItemComponent extends React.Component {
   }
 
   render() {
-    const { rate } = this.props;
+    const { rate, freezeInstruments } = this.props;
 
     return (
-      <ItemWrapper>
-        <div>{rate.market}</div>
-        <div>{rate.name}</div>
-        <div>{rate.ask}</div>
-        <div>{rate.bid}</div>
+      <ItemWrapper onClick={() => freezeInstruments(rate.name)}>
+        <Item>{rate.market}</Item>
+        <Item>{rate.name}</Item>
+        <Item>{rate.ask}</Item>
+        <Item>{rate.bid}</Item>
       </ItemWrapper>
     );
   }
