@@ -6,12 +6,18 @@ const modalWindow = {
   isActive: false,
 }
 
-const modalWindowReducer = (state = modalWindow, action) => {
+const modalWindowReducer = (state = config.modalWindow, action) => {
   switch (action.type) {
-    case constants.CHANGE_MODAL_WINDOW_STATE: {
+    case constants.CHANGE_BALANCE_MODAL_WINDOW_STATE: {
       return {
         ...state,
-        isActive: action.payload,
+        balanceModalIsActive: action.payload,
+      }
+    }
+    case constants.CHANGE_SETTING_MODAL_WINDOW_STATE: {
+      return {
+        ...state,
+        settingsModalIsActive: action.payload,
       }
     }
     default: {
@@ -20,13 +26,24 @@ const modalWindowReducer = (state = modalWindow, action) => {
   }
 }
 
-const defaultBalance = 100
+const defaultBalance = 100;
 
 const balanceReducer = (state = defaultBalance, action) => {
   switch (action.type) {
     case constants.CHANGE_BALANCE_STORE: {
       return action.payload
     }
+    case constants.CORRECT_ANSWER: {
+      return state + 100
+    }
+    default: {
+      return state
+    }
+  }
+}
+
+const questionReducer = (state = config.questions, action) => {
+  switch (action.type) {
     default: {
       return state
     }
@@ -115,8 +132,9 @@ const filterReducer = (state = {instruments: '', marketField: 'all'}, action) =>
 };
 
 export default combineReducers({
-  isModalWindow: modalWindowReducer,
+  modalWindowState: modalWindowReducer,
   balance: balanceReducer,
+  questions: questionReducer,
   viewBlocks: viewBlockReducer,
   rates: ratesReducer,
   filter: filterReducer
