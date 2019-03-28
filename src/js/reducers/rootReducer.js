@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import config from '../config/config'
 import constants from '../constants/constants'
+import newsReducer from '../modules/tradingComponent/news/reducer';
 
 const modalWindow = {
   isActive: false,
@@ -130,4 +131,5 @@ export default combineReducers({
   rates: ratesReducer,
   filter: filterReducer,
   // theme: themeReducer,
+  news: newsReducer,
 })

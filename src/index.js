@@ -11,6 +11,8 @@ import MainComponent from './js/modules/mainComponent/index'
 import rootSaga from './js/rootSaga/rootSaga';
 import lightTheme from './js/managers/themeManager/lightTheme';
 
+import * as actions from './js/modules/tradingComponent/news/actions';
+
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
   rootReducer,
@@ -18,6 +20,8 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSaga)
 window.store = store
+
+store.dispatch(actions.getPostsRequest())
 
 ReactDOM.render(
   <Provider store={store}>
