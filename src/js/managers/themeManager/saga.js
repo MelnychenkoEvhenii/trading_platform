@@ -1,16 +1,17 @@
-import { takeLatest } from 'redux-saga/effects';
-import constants from '../../constants/constants';
-import lightTheme from '../themeManager/lightTheme';
-import darkTheme from '../themeManager/darkTheme';
-import { actionChangeTheme } from './actions.js';
+import { takeEvery, put } from 'redux-saga/effects'
+import constants from '../../constants/constants'
+import { darkTheme } from '../../themes/darkTheme'
+import { lightTheme } from '../../themes/lightTheme'
 
-export function* watchTheme () {
-  yield takeLatest(constants.CHANGE_THEME, changeTheme);
+export function* watchTheme() {
+  yield takeEvery(constants.CHANGE_THEME, changeTheme)
 }
 
 export function* changeTheme(action) {
-  switch (action.payload) {
-    case 'light': yield put(actionChangeTheme(lightTheme));
-    case 'dark': yield put(actionChangeTheme(darkTheme));
-  }
+  const payload = action.payload === 'light' ? lightTheme : darkTheme;
+  yield put({
+    type: constants.CHANGE_THEME_STORE,
+    payload: payload
+  });
+
 }

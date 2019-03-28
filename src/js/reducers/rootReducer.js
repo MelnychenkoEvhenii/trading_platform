@@ -2,10 +2,8 @@ import { combineReducers } from 'redux'
 import config from '../config/config'
 import constants from '../constants/constants'
 import newsReducer from '../modules/tradingComponent/news/reducer';
-
-const modalWindow = {
-  isActive: false,
-}
+import { ru } from '../languages/ru/ru'
+import { lightTheme } from '../themes/lightTheme'
 
 const modalWindowReducer = (state = config.modalWindow, action) => {
   switch (action.type) {
@@ -27,7 +25,7 @@ const modalWindowReducer = (state = config.modalWindow, action) => {
   }
 }
 
-const defaultBalance = 100;
+const defaultBalance = 100
 
 const balanceReducer = (state = defaultBalance, action) => {
   switch (action.type) {
@@ -45,6 +43,17 @@ const balanceReducer = (state = defaultBalance, action) => {
 
 const questionReducer = (state = config.questions, action) => {
   switch (action.type) {
+    default: {
+      return state
+    }
+  }
+}
+
+const langReducer = (state = ru, action) => {
+  switch (action.type) {
+    case constants.CHANGE_LANGUAGE_STORE: {
+      return action.payload
+    }
     default: {
       return state
     }
@@ -110,13 +119,16 @@ const ratesReducer = (state = [], action) => {
   }
 }
 
-// const themeReducer = ( state = {}, action ) => {
-//   switch (action.type) {
-//     case constants.CHANGE_THEME_STORE: {
-//       return {...action.payload}
-//     }
-//   }
-// };
+const themeReducer = ( state = lightTheme, action ) => {
+  switch (action.type) {
+    case constants.CHANGE_THEME_STORE: {
+      return action.payload
+    }
+    default: {
+      return state
+    }
+  }
+};
 
 const filterReducer = (
   state = { instruments: '', marketField: 'all' },
@@ -148,6 +160,6 @@ export default combineReducers({
   viewBlocks: viewBlockReducer,
   rates: ratesReducer,
   filter: filterReducer,
-  // theme: themeReducer,
-  news: newsReducer,
+  translations: langReducer,
+  theme: themeReducer,
 })

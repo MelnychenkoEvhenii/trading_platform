@@ -8,6 +8,7 @@ import Sidebar from '../sidebar/index'
 import TradindComponent from '../tradingComponent/index'
 
 const WrapperMain = styled.div`
+  background-color: ${props => props.theme.main};
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,10 +29,10 @@ export default class MainComponent extends PureComponent {
   }
 
   render() {
-    const { modules } = this.props;
+    const { modules, theme } = this.props;
 
     return (
-      <WrapperMain>
+      <WrapperMain theme={theme}>
         <Header />
         <WrapperContent>
           <Sidebar />

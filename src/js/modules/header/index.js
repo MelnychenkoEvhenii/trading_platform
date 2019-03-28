@@ -7,6 +7,8 @@ const mapStateToProps = state => ({
   balance: selectors.getBalance(state),
   modalWindowState: selectors.getModalWindowState(state),
   questions: selectors.getQuestions(state),
+  translations: selectors.getTranslations(state),
+  theme: selectors.getTheme(state),
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -14,6 +16,8 @@ const mapDispatchToProps = dispatch => ({
   toggleSettingsModal: payload =>
     dispatch(actions.toggleSettingsModal(payload)),
   checkAnswer: payload => dispatch(actions.checkAnswer(payload)),
+  changeLanguage: payload => dispatch(actions.changeLanguage(payload)),
+  changeTheme: payload => dispatch(actions.changeTheme(payload)),
 })
 
 export default connect(

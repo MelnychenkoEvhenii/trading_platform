@@ -1,10 +1,21 @@
-export default {
+export const ru = {
   resources: {
-    hello: 'Привет',
-    world: 'Мир',
+    add: 'Добавить',
+    sideBar: 'Сайдбар',
+    close: 'Закрыть',
+    addBalance: 'Пополнить баланс',
+    settings: 'Настройки',
+    news: 'Новости',
+    race: 'Гонки',
+    quotes: 'Квоты',
+    logOut: 'Выход',
+    notification: 'Уведомления',
+    fullScreen: 'На весь экран',
+    chooseTheme: 'Выберите тему',
+    chooseLang: 'Выберите язык',
   },
   dialogResources: {
-    helloWorld: 'Привет мир',
+    usersTitle: 'Users Online',
   },
   errorCode: {},
 }

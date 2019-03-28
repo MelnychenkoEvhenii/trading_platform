@@ -1,1 +1,3 @@
-export const getStrings = state => state.strings
+export const getTranslations = state => state.translations;
+export const getTheme = state => state.theme;
+

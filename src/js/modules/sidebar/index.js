@@ -4,7 +4,8 @@ import * as actions from './actions'
 import * as selectors from './selectors'
 
 const mapStateToProps = state => ({
-  strings: selectors.getStrings(state),
+  translations: selectors.getTranslations(state),
+  theme: selectors.getTheme(state),
 })
 
 const mapDispatchToProps = dispatch => ({

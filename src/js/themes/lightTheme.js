@@ -1,11 +1,4 @@
-const matrix = {
-  color02: 'blue',
-  color06: 'white',
-}
-
-export default {
-  chat: {
-    borderColor: matrix.color06,
-    backgroundColor: matrix.color02,
-  },
+export const lightTheme = {
+  main: '#ADD8E6',
+  main2: '#696969',
 }

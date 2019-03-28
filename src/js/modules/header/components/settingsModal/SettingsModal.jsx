@@ -29,18 +29,47 @@ const HeaderModal = styled.div`
   background-color: green;
 `
 
+const BodyModal = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  background-color: yellow;
+`
 const ConntentWrapper = styled.div`
   width: 600px;
   height: 500px;
 `
+const SelectLanguageWrapper = styled.div`
+  height: 40px;
+  width: 300px;
+`
+const SelectThemeWrapper = styled.div`
+  height: 40px;
+  width: 300px;
+`
 
 const propTypes = {
   toggleSettingsModal: PropTypes.func,
+  changeLanguage: PropTypes.func,
+  changeTheme: PropTypes.func,
+  translations: PropTypes.object,
 }
 
 export const SettingsModal = props => {
-  const { toggleSettingsModal } = props
+  const {
+    toggleSettingsModal,
+    changeLanguage,
+    changeTheme,
+    translations,
+  } = props
 
+  const handleChangeLang = event => {
+    changeLanguage(event.target.value)
+  }
+  const handleChangeTheme = event => {
+    changeTheme(event.target.value)
+  }
   return (
     <ModalWindow>
       <ModalWrapper>
@@ -49,7 +78,7 @@ export const SettingsModal = props => {
             toggleSettingsModal(false)
           }}
         >
-          <ConntentWrapper>
+          <ConntentWrapper className="ContentWrapper">
             <HeaderModal>
               <CloseModalButton
                 onClick={() => {
@@ -59,6 +88,22 @@ export const SettingsModal = props => {
                 X
               </CloseModalButton>
             </HeaderModal>
+            <BodyModal>
+              <SelectLanguageWrapper>
+                {translations.resources.chooseLang}
+                <select onChange={handleChangeLang}>
+                  <option value="ru">ru</option>
+                  <option value="en">en</option>
+                </select>
+              </SelectLanguageWrapper>
+              <SelectThemeWrapper>
+                {translations.resources.chooseTheme}
+                <select onChange={handleChangeTheme}>
+                  <option value="light">light</option>
+                  <option value="dark">dark</option>
+                </select>
+              </SelectThemeWrapper>
+            </BodyModal>
           </ConntentWrapper>
         </OutSideClickHandler>
       </ModalWrapper>

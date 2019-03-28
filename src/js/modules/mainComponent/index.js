@@ -5,6 +5,7 @@ import * as actions from './actions'
 
 const mapStateToProps = state => ({
   modules: selectors.getModules(state),
+  theme: selectors.getTheme(state),
 })
 
 const mapDispatchToProps = dispatch => ({

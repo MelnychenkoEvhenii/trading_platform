@@ -4,26 +4,30 @@ import styled from 'styled-components'
 import PureComponent from '../../base/pureComponent/PureComponent.jsx'
 import { BalanceModal } from './components/balanceModal/BalanceModal'
 import { SettingsModal } from './components/settingsModal/SettingsModal'
+import { fullScreenHandler } from './logic'
 
 const WrapperHeader = styled.div`
+  background-color: ${props => props.theme.main};
   border: 1px double black;
   display: flex;
   justify-content: space-between;
 `
 
-const BalanceButton = styled.button`
-`
-const SettingsButton = styled.button`
-`
+const BalanceButton = styled.button``
+const SettingsButton = styled.button``
 
 export default class Header extends PureComponent {
   static propTypes = {
     balance: PropTypes.number,
     modalWindowState: PropTypes.object,
     questions: PropTypes.object,
+    translations: PropTypes.object,
+    theme: PropTypes.object,
     toggleBalanceModal: PropTypes.func,
     toggleSettingsModal: PropTypes.func,
+    changeLanguage: PropTypes.func,
     checkAnswer: PropTypes.func,
+    changeTheme: PropTypes.func,
   }
 
   static defaultProps = {}
@@ -36,9 +40,13 @@ export default class Header extends PureComponent {
       modalWindowState,
       questions,
       checkAnswer,
+      translations,
+      changeLanguage,
+      changeTheme,
+      theme,
     } = this.props
     return (
-      <WrapperHeader>
+      <WrapperHeader theme={theme}>
         <div className="name">ReactAppTeam</div>
         <div className="balance">{balance}$</div>
         <BalanceButton
@@ -47,7 +55,7 @@ export default class Header extends PureComponent {
             toggleBalanceModal(!modalWindowState.balanceModalIsActive)
           }}
         >
-          Пополнение баланса
+          {translations.resources.addBalance}
         </BalanceButton>
         {modalWindowState.balanceModalIsActive && (
           <BalanceModal
@@ -57,21 +65,30 @@ export default class Header extends PureComponent {
           />
         )}
         <div className="logo">Logo</div>
-        <div className="Notification">Notification</div>
-        <div className="FullScreen">FullScreen</div>
+        <div className="Notification">
+          {translations.resources.notification}
+        </div>
+        <button onClick={fullScreenHandler}>
+          {translations.resources.fullScreen}
+        </button>
         <SettingsButton
           className="Settings"
           onClick={() => {
             toggleSettingsModal(!modalWindowState.settingsModalIsActive)
           }}
         >
-          Settings
+          {translations.resources.settings}
         </SettingsButton>
         {modalWindowState.settingsModalIsActive && (
-          <SettingsModal toggleSettingsModal={toggleSettingsModal} />
+          <SettingsModal
+            changeLanguage={changeLanguage}
+            changeTheme={changeTheme}
+            translations={translations}
+            toggleSettingsModal={toggleSettingsModal}
+          />
         )}
 
-        <a href="https://deveducation.com/">Logout</a>
+        <a href="https://deveducation.com/">{translations.resources.logOut}</a>
       </WrapperHeader>
     )
   }
