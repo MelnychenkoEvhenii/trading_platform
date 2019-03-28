@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import config from '../config/config'
 import constants from '../constants/constants'
+import newsReducer from '../modules/tradingComponent/news/reducer';
 
 const modalWindow = {
   isActive: false,
@@ -58,7 +59,7 @@ const viewBlockReducer = (state = config, action) => {
         modules: {
           ...state.modules,
           news: {
-            isActive: action.payload,
+            isActive: !state.modules.news.isActive,
           },
         },
       }
@@ -68,7 +69,7 @@ const viewBlockReducer = (state = config, action) => {
         modules: {
           ...state.modules,
           race: {
-            isActive: action.payload,
+            isActive: !state.modules.race.isActive,
           },
         },
       }
@@ -78,7 +79,7 @@ const viewBlockReducer = (state = config, action) => {
         modules: {
           ...state.modules,
           quotes: {
-            isActive: action.payload,
+            isActive: !state.modules.quotes.isActive,
           },
         },
       }
@@ -97,11 +98,17 @@ const ratesReducer = (state = [], action) => {
     case constants.RATES_UPDATE_STORE: {
       return action.payload
     }
+    case constants.INSTRUMENT_ISFREEZE_STORE: {
+      debugger;
+        return {
+          ...state,
+        }
+    }
     default: {
       return state
     }
   }
-};
+}
 
 // const themeReducer = ( state = {}, action ) => {
 //   switch (action.type) {
@@ -111,25 +118,28 @@ const ratesReducer = (state = [], action) => {
 //   }
 // };
 
-const filterReducer = (state = {instruments: '', marketField: 'all'}, action) => {
+const filterReducer = (
+  state = { instruments: '', marketField: 'all' },
+  action
+) => {
   switch (action.type) {
     case constants.FILTER_INSTRUMENTS: {
       return {
         ...state,
-        instruments: action.payload
+        instruments: action.payload,
       }
     }
     case constants.FILTER_MARKET_FIELD: {
       return {
         ...state,
-        marketField: action.payload
+        marketField: action.payload,
       }
     }
     default: {
       return state
     }
   }
-};
+}
 
 export default combineReducers({
   modalWindowState: modalWindowReducer,
@@ -137,73 +147,7 @@ export default combineReducers({
   questions: questionReducer,
   viewBlocks: viewBlockReducer,
   rates: ratesReducer,
-  filter: filterReducer
+  filter: filterReducer,
   // theme: themeReducer,
+  news: newsReducer,
 })
-
-// normalize = (string) => {
-//   return string.replace(/[^A-Za-zА-Яа-я0-9]/g, '').toLowerCase();
-// };
-//
-// compare = (arg1, arg2) => {
-//   let result = 0;
-//   if (arg1.FullName.toLowerCase() > arg2.FullName.toLowerCase()) {
-//     result = 1;
-//   }
-//   if (arg1.FullName.toLowerCase() < arg2.FullName.toLowerCase()) {
-//     result = -1;
-//   }
-//   return result;
-// };
-//
-// getFilteredList = () => {
-//   const { loadedRates, searchValue } = this.props;
-//   const activeTab = Actions.getActiveTab().toLowerCase();
-//   let quotations = [];
-//   let filteredQuotations = [];
-//   let isFilteredQuotations = false;
-//
-//   if (activeTab !== 'all') {
-//     if (activeTab === 'popular') {
-//       quotations = Object.values(loadedRates).filter(item => item.isPopular);
-//     } else if (activeTab === 'favorites') {
-//       Object.keys(loadedRates).map(item => {
-//         if (this.favorites.hasOwnProperty(item)) {
-//           quotations.push(loadedRates[item]);
-//         }
-//       });
-//     } else {
-//       quotations = Object.values(loadedRates).filter(item => item.Category.toLowerCase() === activeTab);
-//     }
-//     isFilteredQuotations = false;
-//   } else {
-//     quotations = Object.values(loadedRates).filter(item => item);
-//     isFilteredQuotations = false;
-//   }
-//
-//   if (searchValue) {
-//     isFilteredQuotations = true;
-//     filteredQuotations = Object.values(quotations).filter(item => {
-//       const value = this.normalize(searchValue);
-//       return !!(value && this.normalize(item.FullName).indexOf(value) + 1);
-//     });
-//   }
-//
-//   return isFilteredQuotations ? filteredQuotations.sort(this.compare) : quotations.sort(this.compare);
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

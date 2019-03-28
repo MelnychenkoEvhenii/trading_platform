@@ -4,14 +4,14 @@ import watchConnectorSaga from '../connector/connector';
 import modalSaga from '../managers/modalWindow/saga';
 import watchUpdateRates from '../connector/saga';
 import { watchTheme } from '../managers/themeManager/saga';
-import { watchFilterInstruments } from '../modules/tradingComponent/quotes/saga';
+import { getPosts } from '../modules/tradingComponent/news/saga'
 
 export default function* watchRootSaga() {
   yield all([
     watchConnectorSaga(),
     watchUpdateRates(),
     watchTheme(),
-    watchFilterInstruments(),
+    getPosts(),
     modalSaga(),
   ])
 }

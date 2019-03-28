@@ -6,6 +6,7 @@ import PureComponent from '../../base/pureComponent/PureComponent.jsx'
 // import News from './news'
 import Quotes from './quotes/index'
 import Race from './race/index'
+import News from './news/index';
 
 const WrapperTrading = styled.div`
   width: 100%;
@@ -20,11 +21,11 @@ const RaceAndNews = styled.div`
   justify-content: space-between;
 `
 
-const News = styled.div`
-  border: 1px double black;
-  width: 100%;
-  height: 100%;
-`
+// const Newss = styled.div`
+//   border: 1px double black;
+//   width: 100%;
+//   height: 100%;
+// `
 
 export default class TradingComponent extends PureComponent {
   static propTypes = {}
@@ -37,7 +38,7 @@ export default class TradingComponent extends PureComponent {
     return (
       <WrapperTrading>
         <RaceAndNews>
-          <News>NEWS</News>
+          <News/>
           {race.isActive ? <Race /> : ''}
         </RaceAndNews>
         {quotes.isActive ? <Quotes /> : ''}
